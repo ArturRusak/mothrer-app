@@ -22,10 +22,10 @@ const StyledSlogan = styled.p`
 
 const Banner = () => (
 	<StyledBanner>
-    <div className="container">
-      <SyledBannerTitle>{CONDUIT.toUpperCase()}</SyledBannerTitle>
-      <StyledSlogan>{SLOGAN}</StyledSlogan>
-    </div>
+		<div className="container">
+			<SyledBannerTitle>{CONDUIT.toUpperCase()}</SyledBannerTitle>
+			<StyledSlogan>{SLOGAN}</StyledSlogan>
+		</div>
 	</StyledBanner>
 );
 
