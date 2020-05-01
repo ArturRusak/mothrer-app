@@ -31,7 +31,7 @@ const darkTheme = {
 	text: '#FAFAFA',
 	color: {
 		...commonStyles.color,
-		primary: '#8d8787',
+		primary: '#dadada',
 		secondary: '#c9bbd7',
 	},
 	toggleBorder: '#6B8096',
@@ -64,7 +64,7 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
   	font-size: 1rem;
   }
   
