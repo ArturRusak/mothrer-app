@@ -8,8 +8,9 @@ import { CONDUIT } from '../../constants';
 
 const StyledHeader = styled.header`
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
-	color
+	min-height: 5em;
 `;
 
 const StyledDiv = styled.div`

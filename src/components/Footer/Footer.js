@@ -9,10 +9,10 @@ const StyledDiv = styled.div`
 `;
 
 const Footer = () => (
-	<foorter>
+	<footer>
 		<div className="content">
 			<StyledDiv>{CONDUIT.toUpperCase()}</StyledDiv>
 		</div>
-	</foorter>
+	</footer>
 );
 export default Footer;
