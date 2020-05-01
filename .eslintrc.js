@@ -18,6 +18,11 @@ module.exports = {
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "plugins": ["react", "prettier"],
     "rules": {
         "prettier/prettier": [
