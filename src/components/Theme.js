@@ -31,7 +31,7 @@ const darkTheme = {
 	text: '#FAFAFA',
 	color: {
 		...commonStyles.color,
-		primary: '#dadada',
+		primary: '#8c8c8c',
 		secondary: '#c9bbd7',
 	},
 	toggleBorder: '#6B8096',
