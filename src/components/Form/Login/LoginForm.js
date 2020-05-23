@@ -11,7 +11,6 @@ const StyledDiv = styled.div`
 	margin-bottom: 1em;
 `;
 
-
 // TODO: move to reducers
 const reducer = (state, { type, payload }) => {
 	console.log(state);

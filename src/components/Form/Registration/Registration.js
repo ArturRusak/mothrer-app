@@ -14,6 +14,7 @@ const StyledDiv = styled.div`
 // TODO: move to reducers
 const reducer = (state, { type, payload }) => {
 	console.log(state);
+	const { password, username, email } = payload;
 	switch (type) {
 		case 'email':
 			return {
@@ -30,6 +31,13 @@ const reducer = (state, { type, payload }) => {
 				...state,
 				userName: payload,
 			};
+		case 'errors':
+			return {
+				...state,
+				emailErrors: email,
+				userNameErrors: username,
+				passwordErrors: password,
+			};
 		default:
 			return state;
 	}
@@ -38,11 +46,11 @@ const reducer = (state, { type, payload }) => {
 const RegistrationForm = () => {
 	const initialState = {
 		email: '',
-		emailError: [],
+		emailErrors: [],
 		password: '',
-		passwordError: [],
+		passwordErrors: [],
 		userName: '',
-		userNameError: [],
+		userNameErrors: [],
 	};
 	const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -60,13 +68,7 @@ const RegistrationForm = () => {
 			.catch(({ response }) => {
 				const { errors } = response.data;
 
-				const objKeys = Object.keys(errors);
-
-				objKeys.map((key) => {
-					if (errors[key].length) {
-						// TODO: add Error handling
-					}
-				});
+				dispatch({ type: 'errors', payload: errors });
 			});
 	};
 
@@ -89,6 +91,10 @@ const RegistrationForm = () => {
 					type="text"
 					value={state.userName}
 				/>
+				{state.userNameErrors.length > 0 &&
+					state.userNameErrors.map((item, index) => (
+						<span key={`${index}-error`}>{item}</span>
+					))}
 			</StyledDiv>
 			<StyledDiv>
 				<label htmlFor="email">Email:</label>
@@ -100,6 +106,10 @@ const RegistrationForm = () => {
 					type="text"
 					value={state.email}
 				/>
+				{state.emailErrors.length > 0 &&
+					state.emailErrors.map((item, index) => (
+						<span key={`${index}-error`}>{item}</span>
+					))}
 			</StyledDiv>
 			<StyledDiv>
 				<label htmlFor="password">Password:</label>
@@ -111,6 +121,10 @@ const RegistrationForm = () => {
 					type="password"
 					value={state.password}
 				/>
+				{state.passwordErrors.length > 0 &&
+					state.passwordErrors.map((item, index) => (
+						<span key={`${index}-error`}>{item}</span>
+					))}
 			</StyledDiv>
 			<button>Sign up</button>
 		</form>
