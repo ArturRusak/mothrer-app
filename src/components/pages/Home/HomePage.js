@@ -3,11 +3,11 @@ import Banner from '../../Banner';
 
 import Articles from '../../../containers/Articles';
 
-const Home = () => (
+const HomePage = () => (
 	<>
 		<Banner />
 		<Articles />
 	</>
 );
 
-export default Home;
+export default HomePage;

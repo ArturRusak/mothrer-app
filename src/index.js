@@ -4,12 +4,11 @@ import App from './components/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
+// TODO: enable React.StrictMode
 ReactDOM.render(
-	<React.StrictMode>
-		<Router>
-			<App />
-		</Router>
-	</React.StrictMode>,
+	<Router>
+		<App />
+	</Router>,
 	document.getElementById('root')
 );
 
