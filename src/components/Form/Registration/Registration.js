@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import { StyledInput } from '../../Styled';
 import styled from 'styled-components';
 
+import { registrationReducer } from '../../../reducers';
 import { signUp } from '../../../services/api';
 
 const StyledDiv = styled.div`
@@ -11,48 +12,17 @@ const StyledDiv = styled.div`
 	margin-bottom: 1em;
 `;
 
-// TODO: move to reducers
-const reducer = (state, { type, payload }) => {
-	console.log(state);
-	const { password, username, email } = payload;
-	switch (type) {
-		case 'email':
-			return {
-				...state,
-				email: payload,
-			};
-		case 'password':
-			return {
-				...state,
-				password: payload,
-			};
-		case 'userName':
-			return {
-				...state,
-				userName: payload,
-			};
-		case 'errors':
-			return {
-				...state,
-				emailErrors: email,
-				userNameErrors: username,
-				passwordErrors: password,
-			};
-		default:
-			return state;
-	}
+const initialState = {
+	email: '',
+	emailErrors: [],
+	password: '',
+	passwordErrors: [],
+	userName: '',
+	userNameErrors: [],
 };
 
 const RegistrationForm = () => {
-	const initialState = {
-		email: '',
-		emailErrors: [],
-		password: '',
-		passwordErrors: [],
-		userName: '',
-		userNameErrors: [],
-	};
-	const [state, dispatch] = useReducer(reducer, initialState);
+	const [state, dispatch] = useReducer(registrationReducer, initialState);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -76,8 +46,6 @@ const RegistrationForm = () => {
 		const { value, name } = event.target;
 		dispatch({ type: name, payload: value });
 	};
-
-	console.log(state, 'STATE');
 
 	return (
 		<form onSubmit={handleSubmit}>
