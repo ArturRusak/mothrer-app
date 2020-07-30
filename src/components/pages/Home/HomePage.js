@@ -6,7 +6,9 @@ import Articles from '../../../containers/Articles';
 const HomePage = () => (
 	<>
 		<Banner />
-		<Articles />
+		<section className="container">
+			<Articles />
+		</section>
 	</>
 );
 

@@ -18,7 +18,7 @@ const lightTheme = {
 	text: '#363537',
 	color: {
 		...commonStyles.color,
-		primary: '#7e45f2',
+		primary: '#84f2a1',
 		secondary: '#603493',
 	},
 	toggleBorder: '#FFF',

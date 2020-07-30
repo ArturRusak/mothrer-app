@@ -12,6 +12,16 @@ const StyledDiv = styled.div`
 	margin-bottom: 1em;
 `;
 
+const StyledLoginForm = styled.form`
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 2em 0;
+`;
+
+const StyledCenterDiv = styled.div`
+	text-align: center;
+`;
+
 const LoginForm = () => {
 	const initialState = {
 		email: '',
@@ -43,7 +53,7 @@ const LoginForm = () => {
 	console.log(state, 'STATE');
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<StyledLoginForm onSubmit={handleSubmit}>
 			<StyledDiv>
 				<label htmlFor="email">Email:</label>
 				<StyledInput
@@ -66,8 +76,10 @@ const LoginForm = () => {
 					value={state.password}
 				/>
 			</StyledDiv>
-			<button>Submit</button>
-		</form>
+			<StyledCenterDiv>
+				<button>Submit</button>
+			</StyledCenterDiv>
+		</StyledLoginForm>
 	);
 };
 

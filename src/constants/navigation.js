@@ -2,7 +2,7 @@ const NAVIGATION = {
 	ITEMS: {
 		PUBLIC: [
 			{
-				title: 'HomePage',
+				title: 'Home',
 				url: '/',
 			},
 			{

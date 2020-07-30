@@ -29,7 +29,7 @@ const Header = () => (
 	<StyledHeader>
 		<div className="container">
 			<StyledDiv>
-				<StyledLink to="/">{CONDUIT}</StyledLink>
+				<StyledLink to="/">{CONDUIT.toUpperCase()}</StyledLink>
 				<Navigation />
 			</StyledDiv>
 		</div>
